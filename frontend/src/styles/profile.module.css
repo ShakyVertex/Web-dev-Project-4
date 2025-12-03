@@ -121,12 +121,11 @@
 }
 
 .editButton {
-  background: #667eea;
+  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
   color: white;
 }
 
 .editButton:hover {
-  background: #5a6dd8;
   transform: translateY(-1px);
 }
 
