@@ -127,12 +127,6 @@ function Dashboard({ user }) {
             <p className={styles.emptyText}>
               Choose a skill and begin your personalized learning path
             </p>
-            <button
-              onClick={handleCreateJourney}
-              className={styles.createButton}
-            >
-              Create Your First Journey
-            </button>
           </div>
         ) : (
           <div className={styles.journeyGrid}>
