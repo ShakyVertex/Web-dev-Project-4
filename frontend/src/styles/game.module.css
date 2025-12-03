@@ -1,0 +1,261 @@
+.container {
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.gameCard {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.backLink {
+  display: none; /* Remove back button */
+}
+
+.levelInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.levelNumber {
+  background: #667eea;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.skillName {
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Task Section */
+.taskSection {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.taskCard {
+  padding: 0;
+}
+
+.taskTitle {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.taskDescription {
+  font-size: 22px;
+  color: #1a1a1a;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Completion Section */
+.completionSection {
+  margin-bottom: 32px;
+}
+
+.completionTitle {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.difficultyButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.difficultyButton {
+  background: white;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 16px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+}
+
+.difficultyButton:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.difficultyButton.selected {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.difficultyButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emoji {
+  font-size: 24px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+}
+
+.difficultyButton.selected .label {
+  color: white;
+}
+
+.completeButton {
+  width: 100%;
+  padding: 14px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.completeButton:hover:not(:disabled) {
+  background: #5a6dd8;
+  transform: translateY(-1px);
+}
+
+.completeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  background: #999;
+}
+
+/* Footer Section */
+.footer {
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.journeyInfo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.journeyInfo span {
+  font-size: 13px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Error and Loading States */
+.errorMessage {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.loadingCard,
+.errorCard {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  border: 3px solid #f0f0f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.backButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background: #5a6dd8;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 20px;
+  }
+
+  .taskDescription {
+    font-size: 18px;
+  }
+
+  .difficultyButtons {
+    flex-wrap: wrap;
+  }
+
+  .difficultyButton {
+    min-width: 70px;
+    padding: 12px 8px;
+  }
+
+  .emoji {
+    font-size: 20px;
+  }
+}

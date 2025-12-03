@@ -1,0 +1,85 @@
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #667eea;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.userInfo {
+  color: #666;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profilePic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.navLink,
+.activeLink {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #667eea;
+}
+
+.activeLink {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.logoutButton {
+  padding: 8px 16px;
+  background: transparent;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logoutButton:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}

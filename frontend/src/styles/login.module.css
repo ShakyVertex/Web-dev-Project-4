@@ -1,0 +1,138 @@
+.authContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.authCard {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ffcdd2;
+  text-align: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.inputGroup input {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.inputGroup input::placeholder {
+  color: #000000;
+  font-size: 14px;
+}
+
+.submitButton {
+  padding: 14px;
+  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.switchText {
+  text-align: center;
+  margin-top: 24px;
+  color: #666;
+  font-size: 14px;
+}
+
+.switchText a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.switchText a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .authCard {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
