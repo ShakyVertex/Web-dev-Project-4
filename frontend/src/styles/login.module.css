@@ -136,3 +136,373 @@
     font-size: 14px;
   }
 }
+
+/* Split Screen Container */
+.splitContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Hero Section (Scrollable) */
+.heroSection {
+  flex: 1;
+  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+  color: white;
+  overflow-y: auto;
+  padding: 60px 40px;
+}
+
+.heroContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroHeader {
+  margin-bottom: 80px;
+  animation: fadeInDown 0.8s ease;
+}
+
+.heroLogo {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: 2px;
+}
+
+.heroTagline {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 300;
+}
+
+.heroMain {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.heroTitle {
+  font-size: 56px;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  font-weight: 800;
+}
+
+.heroDescription {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* What We Do Section */
+.whatWeDoSection {
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  margin: 0 0 32px 0;
+  font-weight: 700;
+}
+
+.benefitItem {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.benefitItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
+}
+
+.benefitItem h4 {
+  font-size: 20px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.benefitItem p {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Why Section */
+.whySection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.whyText {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.heroFooter {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 14px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Right Side - Login Section (Fixed) */
+.loginSection {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.loginContainer {
+  width: 100%;
+  max-width: 440px;
+  animation: fadeIn 1s ease 0.4s both;
+}
+
+.authCard {
+  background: white;
+  padding: 48px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 32px;
+  color: #333;
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  margin: 0 0 40px 0;
+  font-size: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #ffcdd2;
+  text-align: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.inputGroup input {
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #ea6666;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(234, 102, 102, 0.1);
+}
+
+.inputGroup input::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+
+.submitButton {
+  padding: 16px;
+  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(234, 102, 102, 0.4);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.switchText {
+  text-align: center;
+  margin-top: 32px;
+  color: #666;
+  font-size: 15px;
+}
+
+.switchText a {
+  color: #ea6666;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.switchText a:hover {
+  color: #a24b4b;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .splitContainer {
+    flex-direction: column;
+  }
+  
+  .heroSection {
+    padding: 40px 24px;
+  }
+  
+  .loginSection {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 24px;
+  }
+  
+  .heroTitle {
+    font-size: 40px;
+  }
+  
+  .heroDescription {
+    font-size: 18px;
+  }
+  
+  .authCard {
+    padding: 32px 24px;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+  }
+  
+  .benefitItem {
+    padding: 24px;
+  }
+  
+  .whySection {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+  
+  .heroDescription {
+    font-size: 16px;
+  }
+  
+  .benefitItem {
+    padding: 20px;
+  }
+  
+  .benefitItem h4 {
+    font-size: 18px;
+  }
+  
+  .benefitItem p {
+    font-size: 15px;
+  }
+  
+  .whyText {
+    font-size: 16px;
+  }
+}

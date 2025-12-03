@@ -1,18 +1,28 @@
 import express from "express";
+import passport from "passport";
+import bcrypt from "bcrypt";
 import MyMongoDB from "../db/myMongoDB.js";
 
 const router = express.Router();
+const SALT_ROUNDS = 10;
 
 // Initialize MongoDB for users collection
 const usersDB = MyMongoDB({
   dbName: "levelupDB",
-  collectionName: "users",
+  collectionName: "secureUsers",
 });
 
 // Signup route - POST /api/auth/signup
 router.post("/signup", async (req, res) => {
   try {
     const { name, email, password, profileImage } = req.body;
+
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email, and password are required",
+      });
+    }
 
     // Check if user already exists
     const existingUser = await usersDB.findOne({ email });
@@ -24,25 +34,31 @@ router.post("/signup", async (req, res) => {
       });
     }
 
-    // Create new user
-    const newUser = {
+    // Hash password before saving
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+
+    const userDoc = {
       name,
       email,
-      password,
-      profileImage,
+      password: hashedPassword,
+      profileImage: profileImage || null,
       createdAt: new Date(),
+      updatedAt: new Date(),
     };
 
-    const result = await usersDB.insertDocument(newUser);
+    const result = await usersDB.insertDocument(userDoc);
 
-    res.json({
+    const { password: _pw, ...userWithoutPassword } = userDoc;
+    userWithoutPassword._id = result.insertedId;
+
+    return res.status(201).json({
       success: true,
-      message: "User created successfully",
-      userId: result.insertedId,
+      message: "Signup successful",
+      user: userWithoutPassword,
     });
   } catch (error) {
     console.error("Signup error:", error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Failed to create user",
       error: error.message,
@@ -51,44 +67,27 @@ router.post("/signup", async (req, res) => {
 });
 
 // Login route - POST /api/auth/login
-router.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    // Find user by email
-    const user = await usersDB.findOne({ email });
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", { session: false }, (err, user, info) => {
+    if (err) {
+      console.error("Login error:", err);
+      return next(err);
+    }
 
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: "Invalid email or password",
+        message: info?.message || "Invalid email or password",
       });
     }
 
-    if (user.password !== password) {
-      return res.status(401).json({
-        success: false,
-        message: "Invalid email or password",
-      });
-    }
-
-    // Remove password from response
-    const userWithoutPassword = { ...user };
-    delete userWithoutPassword.password;
-
-    res.json({
+    // user here is already without password (we removed it in the strategy)
+    return res.json({
       success: true,
       message: "Login successful",
-      user: userWithoutPassword,
+      user,
     });
-  } catch (error) {
-    console.error("Login error:", error);
-    res.status(500).json({
-      success: false,
-      message: "Failed to login",
-      error: error.message,
-    });
-  }
+  })(req, res, next);
 });
 
 // Delete user account - DELETE /api/auth/delete
@@ -172,7 +171,7 @@ router.put("/update", async (req, res) => {
     };
 
     if (password) {
-      updateData.password = password;
+      updateData.password = await bcrypt.hash(password, SALT_ROUNDS);
     }
 
     // Update user

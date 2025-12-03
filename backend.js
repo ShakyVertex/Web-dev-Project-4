@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import passport from "passport";
+import { configurePassport } from "./config/passport.js";
+
 import authRoute from "./routes/authRoute.js";
 import gameDataRoute from "./routes/gameDataRoute.js";
 import levelsRoute from "./routes/levelRoute.js";
@@ -15,6 +18,9 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+configurePassport(passport);
+app.use(passport.initialize());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
