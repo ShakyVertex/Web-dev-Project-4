@@ -43,7 +43,7 @@
 }
 
 .newJourneyButton {
-  background: #32d74b;
+  background: #16bb57;
   color: white;
   border: none;
   padding: 10px 22px;
@@ -53,7 +53,7 @@
 }
 
 .newJourneyButton:hover {
-  background: #28c043;
+  background: #1bd867;
 }
 
 /* Main Content Area */
