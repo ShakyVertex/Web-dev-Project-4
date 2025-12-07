@@ -1,24 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
 .app {
+  position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
-}
-
-.mainContent {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 24px;
+  background: 
+    url("/src/assets/random-shapes.svg") center / cover no-repeat,
+    linear-gradient(135deg, #0a4bff 0%, #005aff 100%);
+  background-blend-mode: soft-light;
   color: white;
-  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
 }
+
+/* Skip link styles for accessibility */
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #005aff;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skipLink:focus {
+  top: 0;
+}
+
+/* Global focus-visible outline for interactive elements */
+:global(button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible) {
+  outline: 3px solid #0050d6;
+  outline-offset: 2px;
+}
+

@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+/* Container for the profile page */
 .profileContainer {
   width: 100%;
   max-width: 500px;
   margin: 40px auto;
   padding: 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .profileCard {
@@ -28,9 +32,10 @@
 
 .title {
   font-size: 24px;
-  color: #1a1a1a;
+  color: #0a2463;
   font-weight: 600;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .form {
@@ -70,7 +75,8 @@
 .inputGroup label {
   font-size: 14px;
   font-weight: 600;
-  color: #555;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
 }
 
 .inputGroup input {
@@ -80,13 +86,14 @@
   font-size: 16px;
   transition: all 0.3s ease;
   background: #fafafa;
+  font-family: 'Nunito', sans-serif;
 }
 
 .inputGroup input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #0066ff;
   background: white;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
 }
 
 .inputGroup input:disabled {
@@ -118,24 +125,26 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .editButton {
-  background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+  background: linear-gradient(90deg, #0066ff 0%, #0050d6 100%);
   color: white;
 }
 
 .editButton:hover {
   transform: translateY(-1px);
+  background: linear-gradient(90deg, #1a75ff 0%, #005fff 100%);
 }
 
 .saveButton {
-  background: #667eea;
+  background: linear-gradient(90deg, #32d74b 0%, #28c043 100%);
   color: white;
 }
 
 .saveButton:hover:not(:disabled) {
-  background: #5a6dd8;
+  background: linear-gradient(90deg, #28c043 0%, #24b23b 100%);
   transform: translateY(-1px);
 }
 
@@ -171,8 +180,6 @@
     height: 80px;
   }
 }
-
-/* Add these styles to Profile.module.css */
 
 .deleteButton {
   flex: 1;

@@ -1,10 +1,13 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+ .container {
   max-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
   background: #f9f9f9;
+  font-family: 'Nunito', sans-serif;
 }
 
 .gameCard {
@@ -31,18 +34,20 @@
 }
 
 .levelNumber {
-  background: #667eea;
+  background: #0066ff;
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
 .skillName {
   font-size: 15px;
-  color: #444;
+  color: #0a2463;
   font-weight: 500;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Task Section */
@@ -57,20 +62,22 @@
 
 .taskTitle {
   font-size: 12px;
-  color: #999;
+  color: #0066ff;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
 .taskDescription {
   font-size: 22px;
-  color: #1a1a1a;
+  color: #0a2463;
   line-height: 1.6;
   font-weight: 400;
   max-width: 500px;
   margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Completion Section */
@@ -80,10 +87,11 @@
 
 .completionTitle {
   font-size: 14px;
-  color: #666;
+  color: #444;
   text-align: center;
   margin-bottom: 24px;
   font-weight: 500;
+  font-family: 'Poppins', sans-serif;
 }
 
 .difficultyButtons {
@@ -108,13 +116,14 @@
 }
 
 .difficultyButton:hover:not(:disabled) {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: #0066ff;
+  background: #f0f6ff;
 }
 
 .difficultyButton.selected {
-  background: #667eea;
-  border-color: #667eea;
+  background: #0066ff;
+  border-color: #0066ff;
+  color: white;
 }
 
 .difficultyButton:disabled {
@@ -139,7 +148,7 @@
 .completeButton {
   width: 100%;
   padding: 14px;
-  background: #667eea;
+  background: linear-gradient(90deg, #0066ff 0%, #0050d6 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -147,10 +156,11 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
 }
 
-.completeButton:hover:not(:disabled) {
-  background: #5a6dd8;
+ .completeButton:hover:not(:disabled) {
+  background: linear-gradient(90deg, #1a75ff 0%, #005fff 100%);
   transform: translateY(-1px);
 }
 
@@ -208,7 +218,7 @@
   height: 40px;
   margin: 0 auto 20px;
   border: 3px solid #f0f0f0;
-  border-top-color: #667eea;
+  border-top-color: #0066ff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -222,7 +232,7 @@
 .backButton {
   margin-top: 20px;
   padding: 12px 24px;
-  background: #667eea;
+  background: linear-gradient(90deg, #0066ff 0%, #0050d6 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -230,10 +240,11 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
 }
 
 .backButton:hover {
-  background: #5a6dd8;
+  background: linear-gradient(90deg, #1a75ff 0%, #005fff 100%);
 }
 
 /* Responsive Design */

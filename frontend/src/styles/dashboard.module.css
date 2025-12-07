@@ -1,9 +1,11 @@
-/* Dashboard.module.css - Minimal Design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
 .dashboardContainer {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Header Section */
@@ -34,30 +36,29 @@
   color: #ffffff;
   font-weight: 600;
   margin: 0 0 4px 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #ffffff;
+  color: #d0e1ff;
   margin: 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 .newJourneyButton {
-  background: white;
-  color: black;
+  background: #32d74b;
+  color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 12px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .newJourneyButton:hover {
-  background: black;
-  color: white;
-  transform: translateY(-1px);
+  background: #28c043;
 }
 
 /* Main Content Area */
@@ -75,11 +76,12 @@
 
 /* Error State */
 .error {
-  background: #ffebee;
+  background: #ffeef1;
   color: #c62828;
   padding: 16px;
   border-radius: 6px;
   text-align: center;
+  border: 1px solid #f8b6c5;
 }
 
 /* Empty State */
@@ -89,6 +91,7 @@
   padding: 60px 40px;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: 'Nunito', sans-serif;
 }
 
 .emptyIcon {
@@ -98,34 +101,37 @@
 
 .emptyTitle {
   font-size: 20px;
-  color: #1a1a1a;
+  color: #0a2463;
   font-weight: 600;
   margin: 0 0 12px 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .emptyText {
   font-size: 14px;
-  color: #888;
+  color: #666;
   margin: 0 0 24px 0;
+  font-family: 'Nunito', sans-serif;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .createButton {
-  background: #667eea;
+  background: linear-gradient(90deg, #0066ff 0%, #0050d6 100%);
   color: white;
   border: none;
   padding: 12px 28px;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .createButton:hover {
-  background: #5a6dd8;
+  background: linear-gradient(90deg, #1a75ff 0%, #005fff 100%);
   transform: translateY(-1px);
 }
 
@@ -133,35 +139,47 @@
 .journeyGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 40px;
+  justify-items: center;
 }
 
-/* Journey Card */
 .journeyCard {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  color: #111;
+  font-family: 'Nunito', sans-serif;
 }
 
 .journeyCard:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .journeyHeader {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+
+.journeyCard h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111; /* black title */
 }
 
 .journeySkill {
   font-size: 20px;
-  color: #1a1a1a;
+  color: #0a2463;
   font-weight: 600;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .deleteButton {
@@ -183,6 +201,14 @@
   color: #e53935;
 }
 
+.journeyMotivation {
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-family: 'Nunito', sans-serif;
+}
+
 .journeyDetails {
   margin-bottom: 20px;
 }
@@ -192,13 +218,15 @@
 .journeyGoal,
 .journeyDate {
   font-size: 14px;
-  color: #666;
+  color: #555;
   margin: 8px 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 .label {
   font-weight: 600;
-  color: #444;
+  color: #0a2463;
+  font-family: 'Poppins', sans-serif;
 }
 
 .journeyGoal {
@@ -207,26 +235,25 @@
 
 .journeyDate {
   font-size: 12px;
-  color: #999;
+  color: #888;
   margin-top: 12px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .continueButton {
   width: 100%;
-  background: #667eea;
+  background: linear-gradient(90deg, #0066ff 0%, #0050d6 100%);
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 12px;
+  border-radius: 12px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .continueButton:hover {
-  background: #5a6dd8;
-  transform: translateX(2px);
+  background: linear-gradient(90deg, #1a75ff 0%, #005fff 100%);
 }
 
 /* Responsive Design */

@@ -23,7 +23,7 @@ function Dashboard({ user }) {
           headers: {
             "Content-Type": "application/json",
           },
-        },
+        }
       );
 
       const data = await response.json();
@@ -104,9 +104,10 @@ function Dashboard({ user }) {
           )}
           <div>
             <h2 className={styles.greeting}>Welcome back, {user?.name}</h2>
-            <p className={styles.subtitle}>Continue your learning journey</p>
+            <p className={styles.subtitle}>You're doing great, keep leveling up!</p>
           </div>
         </div>
+
         <button
           onClick={handleCreateJourney}
           className={styles.newJourneyButton}
@@ -138,27 +139,37 @@ function Dashboard({ user }) {
                     onClick={() => handleDeleteJourney(journey._id)}
                     className={styles.deleteButton}
                     title="Delete journey"
+                    aria-label="Delete journey"
                   >
                     ×
                   </button>
                 </div>
+
+                <p className={styles.journeyMotivation}>
+                  Continue your learning journey!
+                </p>
+
                 <div className={styles.journeyDetails}>
                   <p className={styles.journeyLevel}>
                     <span className={styles.label}>Level:</span> {journey.level}
                   </p>
+
                   <p className={styles.journeyTime}>
                     <span className={styles.label}>Time:</span>{" "}
                     {journey.timeCommitment || "Not set"}
                   </p>
+
                   {journey.goal && (
                     <p className={styles.journeyGoal}>
                       <span className={styles.label}>Goal:</span> {journey.goal}
                     </p>
                   )}
+
                   <p className={styles.journeyDate}>
                     Started: {formatDate(journey.createdAt)}
                   </p>
                 </div>
+
                 <button
                   onClick={() => handleContinueJourney(journey._id)}
                   className={styles.continueButton}
@@ -175,6 +186,7 @@ function Dashboard({ user }) {
 }
 
 export default Dashboard;
+
 Dashboard.propTypes = {
   user: PropTypes.shape({
     _id: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
