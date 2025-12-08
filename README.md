@@ -8,7 +8,7 @@
 
 - **Authors:** Hemang Murugan & Adrian Halgas
 - **Class:** Web Development — Northeastern University
-- **Date:** [UPDATE DATE]
+- **Date:** [December 7 2025]
 - [Class Link](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
 ---
@@ -29,7 +29,7 @@ This project is built using **Node + Express**, **MongoDB**, and **React (Hooks)
 
 🔗 [Video Demo](https://youtu.be/WGn3qz9C2rg)
 
-🔗 [Usability Study Report]([INSERT LINK])
+🔗 [Hemang Murugan](https://docs.google.com/document/d/1B6IVxViOkxoBFwdxcmfUf1vBoS5iJO2ZVPb8aDqkxZg/edit?usp=sharing) - [Adrian Halgas]()
 
 ---
 
