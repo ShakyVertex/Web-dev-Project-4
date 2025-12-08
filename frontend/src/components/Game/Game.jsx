@@ -189,7 +189,7 @@ function Game() {
 
         <div className={styles.taskSection}>
           <div className={styles.taskCard}>
-            <h2 className={styles.taskTitle}>Your Challenge:</h2>
+            <h1 className={styles.taskTitle}>Your Challenge:</h1>
             <p className={styles.taskDescription}>
               {currentLevel?.task || "Loading task..."}
             </p>
